@@ -43,7 +43,10 @@ jobs:
       - name: Build release apk bundle
         run: flutter build apk --flavor development --target lib/main_development.dart
       - name: Android - Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
-          name: android_app.apk
-          path: android_app.apk
+          name: release-apk
+          paths: build/app/outputs/flutter-apk/app-development-release.apk
+          # Optional: Upload the app bundle too.
+          # paths: |
+          #   build/app/outputs/bundle/release/app.aab

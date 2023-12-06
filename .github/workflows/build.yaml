@@ -39,6 +39,6 @@ jobs:
       # Get Flutter project dependencies
       - name: Get dependencies
         run: flutter pub get
-      #Create relsease Bundle
-      - name: Build release app bundle
-        run: flutter build appbundle
+      # Create relsease apk
+      - name: Build release apk bundle
+        run: flutter build apk --flavor development --target lib/main_development.dart

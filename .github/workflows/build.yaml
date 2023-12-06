@@ -41,7 +41,7 @@ jobs:
         run: flutter pub get
        # Create release apk
       - name: Build release apk bundle
-        run: flutter build apk --flavor development --target lib/main_development.dart
+        run: flutter build apk --release  --flavor production --target lib/main_development.dart
       - name: Android - Upload artifact
         uses: actions/upload-artifact@v3
         with:

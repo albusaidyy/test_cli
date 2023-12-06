@@ -46,7 +46,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: release-apk
-          paths: build/app/outputs/flutter-apk/app-development-release.apk
-          # Optional: Upload the app bundle too.
-          # paths: |
-          #   build/app/outputs/bundle/release/app.aab
+          path: build/app/outputs/flutter-apk/app-development-release.apk
+    

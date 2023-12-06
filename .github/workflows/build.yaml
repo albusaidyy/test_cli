@@ -39,6 +39,15 @@ jobs:
       # Get Flutter project dependencies
       - name: Get dependencies
         run: flutter pub get
-      # Create relsease apk
+      # Create release apk
       - name: Build release apk bundle
-        run: flutter build apk --flavor development --target lib/main_development.dart
+        run: |
+          cd app
+          flutter build apk --flavor development --target lib/main_development.dart
+          cd ../
+          mv app/outputs/flutter-apk/app-development-release.apk android_app.apk
+      - name: Android - Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: android_app.apk
+          path: android_app.apk
